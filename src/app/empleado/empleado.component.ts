@@ -21,4 +21,8 @@ export class EmpleadoComponent implements OnInit {
   setNombre(valor:String) {
     this.nombre = valor;
   }
+
+  saludar() {
+    return this.nombre.length == 0 ? '' : 'Hola ' + this.nombre;
+  }
 }
