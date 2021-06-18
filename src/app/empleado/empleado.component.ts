@@ -11,18 +11,11 @@ export class EmpleadoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
-  getNombre() {
-    return this.nombre;
-  }
+  getNombre() { return this.nombre; }
 
-  setNombre(valor:String) {
-    this.nombre = valor;
-  }
+  setNombre(valor:String) { this.nombre = valor; }
 
-  saludar() {
-    return this.nombre.length == 0 ? '' : 'Hola ' + this.nombre;
-  }
+  saludar() { return this.nombre.length == 0 ? 'Dime tu nombre:' : 'Hola ' + this.nombre; }
 }
