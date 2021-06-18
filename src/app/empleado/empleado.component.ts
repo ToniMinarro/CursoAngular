@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpleadoComponent implements OnInit {
 
+  nombre:String = '';
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  getNombre() {
+    return this.nombre;
+  }
+
+  setNombre(valor:String) {
+    this.nombre = valor;
+  }
 }

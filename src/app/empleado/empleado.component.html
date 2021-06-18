@@ -1,13 +1,13 @@
 <div class="container">
   <div class="jumbotron">
     <h1 class="text-center">Hola</h1>
-    <h2 class="text-center">{{ nombre.value }}</h2>
+    <h2 class="text-center">{{ getNombre() }}</h2>
   </div>
   <div class="panel panel-primary">
     <div class="panel-heading">Usuario</div>
     <div class="panel-body text-center">
       <label for="nombre">Introduce tu nombre: </label><input type="text" #nombre/>
-      <button (click)="nombre.value">Enviar</button>
+      <button (click)="setNombre(nombre.value)">Enviar</button>
     </div>
   </div>
 </div>
