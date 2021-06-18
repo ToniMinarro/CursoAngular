@@ -5,8 +5,9 @@
   <div class="panel panel-primary">
     <div class="panel-heading">Usuario</div>
     <div class="panel-body text-center">
-      <label>Introduce tu nombre: </label><input type="text" #nombre/>
-      <button (click)="setNombre(nombre.value)">Enviar</button>
+      <label>Introduce tu nombre: </label><input id="nombre" type="text" (keyup)="verificarEntrada(nombre.value)" #nombre/>
+      <br />
+      ACTIVADO: <input type="checkbox" (click)="eventoChk($event)" [checked]="getActivo()" />
     </div>
   </div>
 </div>
