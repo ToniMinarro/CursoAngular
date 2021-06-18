@@ -14,20 +14,26 @@ export class EmpleadoComponent implements OnInit {
 
   ngOnInit() {
     var entrada = document.getElementById('nombre');
-    if (entrada != null) {
-      entrada.focus();
-    }
+    if (entrada != null) { entrada.focus(); }
   }
 
-  getNombre() { return this.nombre; }
-  setNombre(valor:String) { this.nombre = valor; }
-  getActivo() { return this.activo; }
-  setActivo(activo:Boolean) { this.activo = activo; }
-
-  verificarEntrada(valor:String) {
+  public verificarEntrada(valor:String) {
     this.nombre = valor;
-    this.activo = this.nombre.length > 0; 
+    this.comprobarActivado();
   }
 
-  eventoChk(event:Event) { event.preventDefault() }
+  public vaciarCampo(entrada:HTMLInputElement) {
+    entrada.value = '';
+    this.nombre = '';
+    this.comprobarActivado();
+  }
+
+  public eventoChk(event:Event) { event.preventDefault(); }
+
+  public getNombre() { return this.nombre; }
+  public setNombre(valor:String) { this.nombre = valor; }
+  public getActivo() { return this.activo; }
+  public setActivo(activo:Boolean) { this.activo = activo; }
+
+  private comprobarActivado() { this.activo = this.nombre.length > 0; }
 }

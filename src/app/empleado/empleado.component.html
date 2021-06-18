@@ -3,11 +3,20 @@
     <h1 class="text-center">{{ nombre.value.length == 0 ? 'Dime tu nombre:' : 'Bienvenido ' + getNombre() }}</h1>
   </div>
   <div class="panel panel-primary">
-    <div class="panel-heading">Usuario</div>
+    <div class="panel-heading">
+      <span>Usuario</span>
+      <span class="pull-right">
+        ACTIVADO: <input id="chkActivado" type="checkbox"
+                    (click)="eventoChk($event);"
+                    [checked]="getActivo()"
+                  />
+      </span>
+    </div>
     <div class="panel-body text-center">
-      <label>Introduce tu nombre: </label><input id="nombre" type="text" (keyup)="verificarEntrada(nombre.value)" #nombre/>
-      <br />
-      ACTIVADO: <input type="checkbox" (click)="eventoChk($event)" [checked]="getActivo()" />
+      <label>Introduce tu nombre: </label><input id="nombre" type="text" #nombre
+        (click)="vaciarCampo(nombre);"
+        (keyup)="verificarEntrada(nombre.value);"
+      />
     </div>
   </div>
 </div>
