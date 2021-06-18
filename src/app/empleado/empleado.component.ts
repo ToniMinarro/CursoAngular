@@ -16,6 +16,4 @@ export class EmpleadoComponent implements OnInit {
   getNombre() { return this.nombre; }
 
   setNombre(valor:String) { this.nombre = valor; }
-
-  saludar() { return this.nombre.length == 0 ? 'Dime tu nombre:' : 'Hola ' + this.nombre; }
 }
